@@ -15,7 +15,12 @@ class SuperheroStore {
     
     // Returns an sorted list based on name
     func sortedByName() -> [Superhero] {
-        return heroes.sorted{ $0.name < $1.name }
+        return heroes.sorted { $0.name < $1.name }
+    }
+    
+    func fuzzySearch(word: String) -> [Superhero] {
+        return heroes.filter { $0.name.rangeOfString(word) != nil }
+                     .sorted { $0.name < $1.name }
     }
     
 }

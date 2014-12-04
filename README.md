@@ -10,3 +10,5 @@ This is some basic boilerplate code to be used to experement with UITableView us
 - Sort (most powerful, Smartest)
 - Categories (superpowers)
 - More advance info in cell
+
+.

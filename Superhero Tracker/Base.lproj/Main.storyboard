@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XPA-wG-8tP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XPA-wG-8tP">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Master View Controller-->
@@ -9,15 +9,26 @@
             <objects>
                 <tableViewController id="exe-Fc-uDc" customClass="MasterViewController" customModule="Superhero_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="545-yn-Ybo">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="6kd-YC-mwE">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="exe-Fc-uDc" id="uRf-8H-O0M"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="fSw-Af-o7M">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fSw-Af-o7M" id="3Z8-jH-6dc">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="8Mg-Kd-jSL" kind="show" id="fJZ-3c-hz9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -26,10 +37,65 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="GOU-do-Eqa"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="6kd-YC-mwE" id="aXz-bZ-2V2"/>
+                        <outlet property="searchDisplayController" destination="MdJ-2e-47s" id="ii8-0M-8pG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RuX-hn-5Em" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="MdJ-2e-47s">
+                    <connections>
+                        <outlet property="delegate" destination="exe-Fc-uDc" id="xtE-bV-QSq"/>
+                        <outlet property="searchBar" destination="6kd-YC-mwE" id="3Le-sM-oAB"/>
+                        <outlet property="searchContentsController" destination="exe-Fc-uDc" id="oLg-PM-W9i"/>
+                        <outlet property="searchResultsDataSource" destination="exe-Fc-uDc" id="Yii-uF-6Ty"/>
+                        <outlet property="searchResultsDelegate" destination="exe-Fc-uDc" id="6kX-Hy-2ET"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1226" y="503"/>
+            <point key="canvasLocation" x="1037" y="471"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="C3G-qR-cxI">
+            <objects>
+                <viewController id="8Mg-Kd-jSL" customClass="DetailViewController" customModule="Superhero_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EHq-R3-X0A"/>
+                        <viewControllerLayoutGuide type="bottom" id="qo5-a6-9Wm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5vT-ZS-Ssd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Secret identity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywP-Ex-65H">
+                                <rect key="frame" x="16" y="103" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZSv-lH-mMl">
+                                <rect key="frame" x="16" y="132" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t0-K7-R8B">
+                                <rect key="frame" x="64" y="202" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="foo" destination="3t0-K7-R8B" id="KeN-2u-o6B"/>
+                        <outlet property="secretId" destination="ZSv-lH-mMl" id="YZz-Cy-yWf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="taN-XU-vvu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1516" y="579"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rXa-pc-PYF">

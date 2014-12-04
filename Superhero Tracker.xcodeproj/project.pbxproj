@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		037E9AC71A30E8F600D4577A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037E9AC61A30E8F600D4577A /* DetailViewController.swift */; };
 		CC1B491E1A2F96D600E1EA06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1B491D1A2F96D600E1EA06 /* AppDelegate.swift */; };
 		CC1B49231A2F96D600E1EA06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC1B49211A2F96D600E1EA06 /* Main.storyboard */; };
 		CC1B49251A2F96D600E1EA06 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC1B49241A2F96D600E1EA06 /* Images.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		037E9AC61A30E8F600D4577A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CC1B49181A2F96D600E1EA06 /* Superhero Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Superhero Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC1B491C1A2F96D600E1EA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC1B491D1A2F96D600E1EA06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				CC1B493D1A2F96FD00E1EA06 /* MasterViewController.swift */,
+				037E9AC61A30E8F600D4577A /* DetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				CC1B49411A2F96FD00E1EA06 /* MasterViewController.swift in Sources */,
 				CC1B49431A2F96FD00E1EA06 /* SuperheroStore.swift in Sources */,
 				CC1B491E1A2F96D600E1EA06 /* AppDelegate.swift in Sources */,
+				037E9AC71A30E8F600D4577A /* DetailViewController.swift in Sources */,
 				CC1B49441A2F96FD00E1EA06 /* SuperheroStoreExtension.swift in Sources */,
 				CC1B49421A2F96FD00E1EA06 /* Superhero.swift in Sources */,
 			);
@@ -421,6 +425,7 @@
 				CC1B49391A2F96D600E1EA06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC1B493A1A2F96D600E1EA06 /* Build configuration list for PBXNativeTarget "Superhero TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +434,7 @@
 				CC1B493C1A2F96D600E1EA06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
